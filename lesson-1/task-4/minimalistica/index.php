@@ -2,7 +2,13 @@
 	$title = "<title>Title</title>";
 	$h1 = "<h1>Заголовок</h1>";
 	$currentYear = date("Y");
-	
+
+// Урок 3, задание 6
+	$menu = [
+		"home" => ["href" => "#"],
+		"archive" => ["href" => "#"],
+		"contact" => ["href" => "#"]
+	];
  ?>
 
 
@@ -18,13 +24,19 @@
 	
 	<div id="content">
 		<?php echo $h1; ?>
-		
-		<ul id="menu">
-			<li><a href="#">home</a></li>
-			<li><a href="#">archive</a></li>
-			<li><a href="#">contact</a></li>
-		</ul>
-	
+
+<!-- ///////// -->
+<ul id="menu">
+	<?php foreach($menu as $text => $link): ?>
+		<li>
+			<a href="<?php echo $link["href"];?>">
+				<?php echo "$text"; ?>
+			</a>
+		</li>
+	<?php endforeach; ?>
+</ul>
+
+
 		<div class="post">
 			<div class="details">
 				<h2><a href="#">Nunc commodo euismod massa quis vestibulum</a></h2>
